@@ -1,24 +1,63 @@
-# README
+## users テーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+| Column             | Type    | Options                   |
+| ------------------ | ------- | ------------------------- |
+| nickname           | string  | null: false               |
+| email              | string  | null: false, unique: true |
+| encrypted_password | string  | null: false               |
+| last_name          | string  | null: false               |
+| first_name         | string  | null: false               |
+| last_name_kana     | string  | null: false               |
+| first_name_kana    | string  | null: false               |
+| birthday           | date    | null: false               |
+| graduation_year    | integer | null: false               |
+| graduation_school  | integer | null: false               |
+| disciplines        | integer |                           |
 
-Things you may want to cover:
+### Association
+- has_many :schedules
+- has_many :comments
+- has_many :applications
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+## schedules テーブル
 
-* Database creation
+| Column              | Type       | Options                        |
+| ------------------- | ---------- | ------------------------------ |
+| start_time          | datetime   | null: false                    |
+| finish_time         | datetime   |                                |
+| place               | string     | null: false                    |
+| activities          | text       |                                |
+| participants        | integer    |                                |
+| user                | references | null: false, foreign_key: true |
 
-* Database initialization
+### Association
+- belongs_to :user
+- has_many   :applications
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## applications テーブル
 
-* ...
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| content          | string     | null: false                    |
+| user             | references | null: false, foreign_key: true |
+| schedule         | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to  :user
+- belongs_to  :schedule
+
+
+
+##  messages テーブル
+
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| message          | string     | null: false                    |
+| user             | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :user
