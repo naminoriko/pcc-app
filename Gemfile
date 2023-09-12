@@ -55,11 +55,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :production do
   gem 'pg'
-<<<<<<< Updated upstream
-end
-=======
 end
 
 gem 'pry-rails'
 gem 'devise'
->>>>>>> Stashed changes
