@@ -9,5 +9,21 @@ class UsersController < ApplicationController
   end
   
   def edit
+    @user = current_user
+  end
+
+  def update
+    @user = current_user
+    if @user.update(user_params)
+      redirect_to root_path
+    else
+      render 'devise/registrations/edit'
+    end
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:nickname, :email, :password, :password_confirmation, :last_name, :first_name, :last_name_kana, :first_name_kana, :birthday, :graduation_year, :graduation_school, :disciplines)
   end
 end
