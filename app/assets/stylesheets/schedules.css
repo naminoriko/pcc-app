@@ -1,0 +1,17 @@
+.header {
+  background-color: #F5F5F5 ;
+  width: 100vw;
+  height: 100px;
+}
+
+.main {
+  background-color: #FFFFFF ;
+  width: 100vw;
+  height: 500px;
+}
+
+.footer {
+  background-color: #F5F5F5 ;
+  width: 100vw;
+  height: 200px;
+}
