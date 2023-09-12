@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'schedules/index'
- root to: "schedules#index"  
+  devise_for :users
+ # get 'schedules/index'
+  root to: "schedules#index"  
+  resources :users, only: [:show, :edit, :update]
 
 end
