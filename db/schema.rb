@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2023_09_12_023049) do
     t.date "birthday", null: false
     t.integer "graduation_year", null: false
     t.integer "graduation_school", null: false
-    t.integer "diciplines"
+    t.integer "disciplines"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
