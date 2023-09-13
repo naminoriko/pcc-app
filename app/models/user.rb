@@ -16,6 +16,6 @@ class User < ApplicationRecord
 
   has_many :schedules
   has_many :comments
-  has_many :applications
+  has_many :applicants
   
 end
