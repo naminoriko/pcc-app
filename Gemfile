@@ -61,4 +61,4 @@ end
 
 gem 'pry-rails'
 gem 'devise'
-gem 'simple_calendar'
+gem "simple_calendar", "~> 2.4"
