@@ -1,0 +1,24 @@
++<h1>練習詳細</h1>
+<br>
+<div class="time">
+開始時間
+  <%= @schedule.start_time %>
+</div>
+<div class="time">
+終了時間
+  <%= @schedule.finish_time.strftime("%H:%M") %>
+</div>
+<div class="place">
+場所
+  <%= @schedule.place %>
+</div>
+<div class="activities">
+アクティビティ
+  <%= @schedule.activities %>
+</div>
+<div class="participants">
+種目
+  <%= @schedule.participants %>
+</div>
+
+<h2>参加申し込みフォーム</h2>
