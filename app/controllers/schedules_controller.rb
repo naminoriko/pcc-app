@@ -32,7 +32,7 @@ class SchedulesController < ApplicationController
 
   def update
     @schedule = Schedule.find(params[:id])
-    if @schedule.update(schedule_parameter)
+    if @schedule.update(schedule_params)
       redirect_to schedules_path, notice: "編集しました"
     else
       render :edit
