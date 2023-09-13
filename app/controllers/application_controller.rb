@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-<<<<<<< HEAD
   before_action :basic_auth
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
@@ -18,6 +17,4 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :last_name, :first_name, :last_name_kana, :first_name_kana, :birthday, :graduation_year, :graduation_school, :disciplines])
   end
 
-=======
->>>>>>> parent of 35e46b5 (Revert "Revert "basic認証の導入"")
 end
