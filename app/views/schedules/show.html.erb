@@ -5,7 +5,7 @@
 
 <h1>練習詳細</h1>
 <br>
-<% if current_user == @schedule.user_id%>
+<% if current_user.id == @schedule.user_id%>
   <%= link_to '編集する', edit_schedule_path %>
   <%= link_to '削除する', schedule_path, method: :delete %>
 <% end %>
@@ -27,7 +27,7 @@
   <%= @schedule.activities %>
 </div>
 <div class="participants">
-種目
+募集人数
   <%= @schedule.participants %>
 </div>
 
