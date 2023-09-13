@@ -4,6 +4,23 @@
   </div>
 
   <div class='main'>
+     <%= month_calendar events: @schedules do |date, schedules| %>
+      <%= date.day %>
+      <% schedules.each do |schedule| %>
+      <%= link_to schedule.place, schedule_path(schedule.id) %>
+      <br><%= schedule.start_time.strftime("%H:%M")%>
+      ~
+      <%= schedule.finish_time.strftime("%H:%M")%>
+     
+      
+      <% end %>
+    <% end %>
+  </div>
+
+  
+  <%= link_to "予定を入れる", new_schedule_path() %>
+
+  
 
   
 
