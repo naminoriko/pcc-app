@@ -7,10 +7,6 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.new
   end
 
-  def show
-    @schedule = Schedule.find(params[:id])
-  end
-
   def create
     @schedule = Schedule.new(schedule_params)
     if @schedule.save
@@ -20,10 +16,8 @@ class SchedulesController < ApplicationController
     end
   end
 
-  def destroy
+  def show
     @schedule = Schedule.find(params[:id])
-    @schedule.destroy
-    redirect_to schedules_path, notice:"削除しました"
   end
 
   def edit
@@ -38,6 +32,14 @@ class SchedulesController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+    @schedule = Schedule.find(params[:id])
+    @schedule.destroy
+    redirect_to schedules_path, notice:"削除しました"
+  end
+
+  
 
   private
 
