@@ -17,7 +17,7 @@
 ### Association
 - has_many :schedules
 - has_many :comments
-- has_many :applications
+- has_many :applicants
 
 
 
@@ -34,11 +34,11 @@
 
 ### Association
 - belongs_to :user
-- has_many   :applications
+- has_many   :applicants
 
 
 
-## applications テーブル
+## applicants テーブル
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
