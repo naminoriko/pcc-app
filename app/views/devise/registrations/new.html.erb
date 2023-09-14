@@ -83,7 +83,7 @@
           <label class="form-text">学校(選択)</label>
           <span class="indispensable">必須</span>
         <div class='input-graduation_year-wrap'>
-         <%= f.collection_select(:graduation_school_id, Graduation_school.all, :id, :name, {}, {class:"graduation_school-select"}) %>
+         <%= f.collection_select(:graduation_school_id, GraduationSchool.all, :id, :name, {}, {class:"graduation_school-select"}) %>
         </div>
     </div>
     </div>

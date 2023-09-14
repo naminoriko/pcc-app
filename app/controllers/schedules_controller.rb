@@ -18,6 +18,8 @@ class SchedulesController < ApplicationController
 
   def show
     @schedule = Schedule.find(params[:id])
+    @applicant = Applicant.new
+    @applicants = @schedule.applicants.includes(:user)
   end
 
   def edit
