@@ -91,8 +91,9 @@
     <div class="form-group">
     <div class='form-text-wrap'>
           <label class="form-text">種目(選択)</label>
-      <div class='input-disciplines'>
-        <%= f.text_area :disciplines, class:"select-disciplines", id:"disciplines", placeholder:"例) フルーレ" %>
+      <div class='input-discipline'>
+        <%= f.collection_select(:discipline_id, Discipline.all, :id, :name, {}, {class:"discipline-select"}) %>
+        <%#= f.text_area :disciplines, class:"select-disciplines", id:"disciplines", placeholder:"例) フルーレ" %>
       </div>
     </div>
     </div>

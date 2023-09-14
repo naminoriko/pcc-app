@@ -12,7 +12,7 @@
 | birthday           | date    | null: false               |
 | graduation_year    | integer | null: false               |
 | graduation_school  | integer | null: false               |
-| disciplines        | integer |                           |
+| discipline         | integer | null: false               |
 
 ### Association
 - has_many :schedules
@@ -28,8 +28,8 @@
 | start_time          | datetime   | null: false                    |
 | finish_time         | datetime   |                                |
 | place               | string     | null: false                    |
-| activities          | text       |                                |
-| participants        | integer    |                                |
+| activity            | text       |                                |
+| participant         | integer    |                                |
 | user                | references | null: false, foreign_key: true |
 
 ### Association

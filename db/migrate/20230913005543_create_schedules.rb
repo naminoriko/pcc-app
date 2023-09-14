@@ -4,8 +4,8 @@ class CreateSchedules < ActiveRecord::Migration[6.0]
       t.datetime     :start_time,  null: false
       t.datetime     :finish_time, null: false
       t.string       :place,       null: false
-      t.text         :activities
-      t.integer      :participants
+      t.text         :activity
+      t.integer      :participant
       t.references   :user,        null: false, foreign_key: true
       t.timestamps
     end
