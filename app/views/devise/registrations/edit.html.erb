@@ -3,7 +3,7 @@
 
  <%= form_with model: current_user, local: true do |f|%>
  <%= render "devise/shared/error_messages", resource: current_user %>
-<
+
  <div class="form-wrap">
     <div class='form-header'>
       <h1 class='form-header-text'>
@@ -83,11 +83,10 @@
   </div>
   <div class="form-group">
    <div class='form-text-wrap'>
-        <label class="form-text">卒業年、学校(選択)</label>
+        <label class="form-text">学校(選択)</label>
         <span class="indispensable">必須</span>
       <div class='input-graduation_year-wrap'>
-        <%= f.text_area :graduation_year, class:"select-graduation", id:"graduation_year", placeholder:"例) 1992" %>
-        <%= f.text_area :graduation_school, class:"select-graduation", id:"graduation_school", placeholder:"例) 1" %>
+        <%= f.collection_select(:graduation_school_id, Graduation_school.all, :id, :name, {}, {class:"graduation_school-select"}) %>
       </div>
    </div>
   </div>
@@ -96,7 +95,6 @@
         <label class="form-text">種目(選択)</label>
     <div class='input-discipline'>
       <%= f.collection_select(:discipline_id, Discipline.all, :id, :name, {}, {class:"discipline-select"}) %>
-      <%#= f.text_area :disciplines, class:"select-disciplines", id:"disciplines", placeholder:"例) フルーレ" %>
     </div>
    </div>
   </div>

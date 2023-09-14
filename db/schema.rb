@@ -38,8 +38,7 @@ ActiveRecord::Schema.define(version: 2023_09_13_141233) do
     t.string "last_name_kana", null: false
     t.string "first_name_kana", null: false
     t.date "birthday", null: false
-    t.integer "graduation_year", null: false
-    t.integer "graduation_school", null: false
+    t.integer "graduation_school_id", null: false
     t.integer "discipline_id", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

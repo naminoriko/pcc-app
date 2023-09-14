@@ -10,7 +10,6 @@
 | last_name_kana     | string  | null: false               |
 | first_name_kana    | string  | null: false               |
 | birthday           | date    | null: false               |
-| graduation_year    | integer | null: false               |
 | graduation_school  | integer | null: false               |
 | discipline         | integer | null: false               |
 
