@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -13,9 +14,16 @@ class User < ApplicationRecord
 
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
   validates :password, format: { with: VALID_PASSWORD_REGEX }
+  validates :discipline_id, numericality: { other_than: 1 , message: "can't be blank" }
+  validates :graduation_school_id, numericality: { other_than: 1 , message: "can't be blank" }  
 
   has_many :schedules
   has_many :comments
   has_many :applicants
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :discipline
+  belongs_to :graduation_school
+
   
 end
