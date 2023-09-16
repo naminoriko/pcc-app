@@ -1,4 +1,7 @@
 class SchedulesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :show, :edit, :upgrate, :destroy]
+  
+
   def index
     @schedules = Schedule.all
   end
