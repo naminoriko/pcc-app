@@ -4,6 +4,7 @@ class SchedulesController < ApplicationController
 
   def index
     @schedules = Schedule.all
+    @messages = Message.all
   end
   
   def new
