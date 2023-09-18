@@ -1,6 +1,10 @@
 class SchedulesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :show, :edit, :upgrate, :destroy]
+  
+
   def index
     @schedules = Schedule.all
+    @messages = Message.all
   end
   
   def new
@@ -18,6 +22,8 @@ class SchedulesController < ApplicationController
 
   def show
     @schedule = Schedule.find(params[:id])
+    @applicant = Applicant.new
+    @applicants = @schedule.applicants.includes(:user)
   end
 
   def edit

@@ -18,9 +18,9 @@ class User < ApplicationRecord
   validates :graduation_school_id, numericality: { other_than: 1 , message: "can't be blank" }  
 
   has_many :schedules
-  has_many :comments
   has_many :applicants
-
+  #has_many :messages
+  
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :discipline
   belongs_to :graduation_school
