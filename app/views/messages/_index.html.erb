@@ -1,10 +1,10 @@
-<div class="contents row">
+ <div class="contents row">
 お知らせ
     <% @messages.each do |message| %>
       <div class="content_post">
-        <p><%= message.message %></p>
-        <span class="name">
-        </span>
+        <p><%= message.message %>
+          <%= link_to "削除", message_path(message.id), method: :delete %> 
+        </p>
       </div>
     <% end %>
   </div>
