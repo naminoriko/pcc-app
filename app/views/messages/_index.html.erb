@@ -3,7 +3,8 @@
     <% @messages.each do |message| %>
       <div class="content_post">
         <p><%= message.message %>
-          <%= link_to "削除", message_path(message.id), method: :delete %> 
+          <%= link_to "削除", message_path(message.id), method: :delete %>
+          <%= link_to "編集", edit_message_path(message.id) %>  
         </p>
       </div>
     <% end %>
