@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :schedules do
     resources :applicants, only: [:create] 
   end
-  resources :messages,     only: [:index, :new, :create, :destroy]
+  resources :messages,     only: [:index, :new, :create, :destroy, :edit, :update]
 end

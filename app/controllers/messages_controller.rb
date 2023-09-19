@@ -12,6 +12,15 @@ class MessagesController < ApplicationController
     message.destroy
   end
 
+  def edit
+    @message = Message.find(params[:id])
+  end
+
+  def update
+    message = Message.find(params[:id])
+    message.update(message_params)
+  end
+
   private
   def message_params
     params.require(:message).permit(:message).merge(user_id: current_user.id)

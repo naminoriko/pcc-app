@@ -1,5 +1,0 @@
-<h3>投稿する</h3>
-    <%= form_with(model: @message, local: true) do |form| %>
-      <%= form.text_field :message, placeholder: "お知らせ内容" %>
-      <%= form.submit "SEND" %>
-    <% end %>
