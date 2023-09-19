@@ -1,17 +1,17 @@
 .header {
-  background-color: #F5F5F5 ;
+  background-color: #e43a19 ;
   width: 100vw;
   height: 100px;
 }
 
 .main {
-  background-color: #FFFFFF ;
+  background-color: #F6EEC9 ;
   width: 100vw;
-  height: 500px;
+  height: 1000px;
 }
 
 .footer {
-  background-color: #F5F5F5 ;
+  background-color: #FFFFFF;
   width: 100vw;
-  height: 200px;
+  height: 400px;
 }
