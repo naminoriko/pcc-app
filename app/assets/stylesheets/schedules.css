@@ -1,8 +1,64 @@
 .header {
+  display: flex;
+  justify-content: space-between;
   background-color: #a6e4e7 ;
   width: 100vw;
-  height: 100px;
+  height: 80px;
 }
+
+.left-header {
+  display: flex;
+  margin-left: 10px;
+  align-items: center;
+}
+
+.club-name {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.user-info {
+  margin-left: 30px;
+  font-size: 15px;
+}
+
+.user-info-lists {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.user-info-list {
+  margin: 0px 5px;
+}
+
+.right-header {
+  display: flex;
+  margin-right: 10px;
+  align-items: center;
+}
+
+.club-info-lists {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.club-info-list {
+  margin: 0px 5px;
+}
+
+a {
+	color: #000000;
+  text-decoration: none;
+}
+
+a:hover{
+  color: orange;
+}
+
+
+
 
 .main {
   background-color: #FFFFFF ;
@@ -16,8 +72,11 @@
   object-fit: cover;
 }
 
+
+
+
 .footer {
-  background-color: #ebcbae;
+  background-color: #a6e4e7;
   width: 100vw;
-  height: 400px;
+  height: 50px;
 }

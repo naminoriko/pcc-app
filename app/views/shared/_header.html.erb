@@ -1,16 +1,48 @@
-<%= link_to "◯◯学校◯◯部", root_path %>
 
-<% if user_signed_in? %>
-  <%= "こんにちは、#{current_user.nickname}さん" %>
-  <%= link_to "マイページ", "/users/#{current_user.id}" %>
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= link_to "新規登録", new_user_registration_path %>
-  <%= link_to "ログイン", new_user_session_path %>
-<% end %>
+<div class="left-header">
+  <div class="club-name">
+    <%= link_to "◯◯学校◯◯部", root_path %>
+  </div>
+  <div class="user-info">
+    <ul class="user-info-lists">
+        <% if user_signed_in? %>
+      <li class="user-info-list"> 
+          <%= "#{current_user.nickname}さん" %>
+      </li>
+      <li class="user-info-list">
+          <%= link_to "マイページ", "/users/#{current_user.id}" %>
+      </li>
+      <li class="user-info-list">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      </li>
+        <% else %>
+      <li class="user-info-list">
+          <%= link_to "新規登録", new_user_registration_path %>
+      </li>
+      <li class="user-info-list">
+          <%= link_to "ログイン", new_user_session_path %>
+      </li>
+        <% end %>
+    </ul>
+  </div>
+</div>
 
-<%= link_to "お知らせ", messages_path %>
-<%= link_to "スケジュール", new_schedule_path %>
-<%= "部の紹介" %>
-<%= "試合結果" %>
-<%= "お問い合わせ" %>
+<div class="right-header">
+  <ul class="club-info-lists">
+    <li class="club-info-list">
+      <%= link_to "お知らせ", messages_path %>
+    </li>
+    <li class="club-info-list">
+      <%= link_to "スケジュール", new_schedule_path %>
+    </li>
+    <li class="club-info-list">
+      <%= "部の紹介" %>
+    </li>
+    <li class="club-info-list">
+      <%= "試合結果" %>
+    </li>
+    <li class="club-info-list">
+      <%= "お問い合わせ" %>
+    </li>
+  </ul>
+</div>
