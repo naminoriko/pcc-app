@@ -1,18 +1,40 @@
- <div class="contents row">
-投稿する
+<div class="news">
+  <div class="news-box">
+
+    <div class="news-new">
+      投稿する
     <%= form_with(model: @message,  local: true) do |form| %>
       <%= form.text_field :message, placeholder: "お知らせ内容", name: "message[message]" %>
       <%= form.submit "SEND" %>
     <% end %>
+    </div>
 
-    お知らせ
-    <% @messages.order(created_at: :desc).each do |message| %>
-      <div class="content_post">
-        <%= message.created_at.strftime('%Y-%m-%d') %>
-        <%= message.message %>
-          <%= link_to "削除", message_path(message.id), method: :delete %>
-          <%= link_to "編集", edit_message_path(message.id) %>  
+
+
+    <div class="news-title">
+      お知らせ
+    </div>
+
+    <div class="news-contents">
+  
+      <% @messages.order(created_at: :desc).each do |message| %>
+        <div class="news-content">
+          <div class="news-content-date">
+            <%= message.created_at.strftime('%Y/%m/%d') %>
+          </div>
+          <div class="news-content-message">
+            <%= message.message %>
+          </div>
+        </div>
+      <% end %>
+    
+
+      <div class="news-show">
+        <%= link_to "READ MORE..", messages_path %>
       </div>
-    <% end %>
+    
+    </div>
 
+  </div>
 </div>
+
