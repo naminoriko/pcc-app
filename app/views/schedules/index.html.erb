@@ -1,5 +1,8 @@
 <div class='main'>
-  <%= render "messages/new.html.erb" %>
+  <div class='top-image'>
+    <%= image_tag '1605802.jpg', alt: 'クラブ画像', class: 'club-image' %>
+  </div>
+ 
   <%= render "messages/index.html.erb" %>
   <%= link_to "予定を入れる", new_schedule_path %>
   <%= month_calendar events: @schedules do |date, schedules| %>

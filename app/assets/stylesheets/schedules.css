@@ -1,17 +1,23 @@
 .header {
-  background-color: #e43a19 ;
+  background-color: #a6e4e7 ;
   width: 100vw;
   height: 100px;
 }
 
 .main {
-  background-color: #F6EEC9 ;
+  background-color: #FFFFFF ;
   width: 100vw;
   height: 1000px;
 }
 
+.club-image {
+  width:100vw;
+  height: 300px;
+  object-fit: cover;
+}
+
 .footer {
-  background-color: #FFFFFF;
+  background-color: #ebcbae;
   width: 100vw;
   height: 400px;
 }

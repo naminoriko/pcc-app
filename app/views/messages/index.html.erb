@@ -1,0 +1,18 @@
+ <div class="contents row">
+投稿する
+    <%= form_with(model: @message,  local: true) do |form| %>
+      <%= form.text_field :message, placeholder: "お知らせ内容", name: "message[message]" %>
+      <%= form.submit "SEND" %>
+    <% end %>
+
+    お知らせ
+    <% @messages.order(created_at: :desc).each do |message| %>
+      <div class="content_post">
+        <%= message.created_at.strftime('%Y-%m-%d') %>
+        <%= message.message %>
+          <%= link_to "削除", message_path(message.id), method: :delete %>
+          <%= link_to "編集", edit_message_path(message.id) %>  
+      </div>
+    <% end %>
+
+</div>
