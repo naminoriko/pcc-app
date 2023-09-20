@@ -1,25 +1,28 @@
+/******************************************************** 
+  ヘッダー
+********************************************************/
 .header {
-  display: flex;
-  justify-content: space-between;
-  background-color: #a6e4e7 ;
   width: 100vw;
-  height: 80px;
+  height: 120hh;
 }
 
-.left-header {
+.top-header {
+  background-color: #FFFFFF;
   display: flex;
-  margin-left: 10px;
+  justify-content: space-between;
   align-items: center;
 }
 
 .club-name {
-  font-size: 25px;
+  font-size: 30px;
   font-weight: bold;
+  margin-left: 10px;
 }
 
 .user-info {
-  margin-left: 30px;
-  font-size: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 10px;
 }
 
 .user-info-lists {
@@ -29,23 +32,26 @@
 }
 
 .user-info-list {
-  margin: 0px 5px;
+  margin: 0px 10px;
 }
 
-.right-header {
+.bottom-header {
+  background-color: #a6e4e7;
   display: flex;
-  margin-right: 10px;
-  align-items: center;
+  justify-content: center;
 }
 
 .club-info-lists {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   list-style: none;
 }
 
 .club-info-list {
-  margin: 0px 5px;
+  margin: 0px 10px;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 a {
@@ -58,8 +64,9 @@ a:hover{
 }
 
 
-
-
+/******************************************************** 
+  トップページ 
+********************************************************/
 .main {
   background-color: #FFFFFF ;
   width: 100vw;
@@ -74,7 +81,9 @@ a:hover{
 
 
 
-
+/******************************************************** 
+  フッター
+********************************************************/
 .footer {
   background-color: #a6e4e7;
   width: 100vw;
