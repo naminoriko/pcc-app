@@ -47,7 +47,7 @@
   justify-content: space-around;
   align-items: center;
   list-style: none;
-  width: 1000px;
+  width: 1200px;
 }
 
 .club-info-list {
@@ -81,45 +81,40 @@ a:hover{
 }
 
 .club-image {
-  width: 1000px;
-  height: 300px;
+  width: 1200px;
+  height: 500px;
   object-fit: cover;
 }
 
 
 
-
-
-
+/******************************************************** 
+  お知らせ
+********************************************************/
 .news {
   display: flex;
   justify-content: center;
 }
 
 .news-box{
-  display: flex;
   background-color: bisque;
-  width: 1000px;
-  height: 200px;
+  width: 1200px;
+  height: 550px;
 }
 
 .news-title {
   font-size: 25px;
-  height: 200px;
-  width: 150px;
-  text-align: center;
-  margin-top: 30px;
+  margin: 100px 0 0 100px;
 }
 
+
 .news-contents {
-  height: 200px;
-  width: 850px;
-  margin-top: 35px;
+  margin: 30px 0 0 100px;
 }
 
 .news-content {
   font-size: 16px;
-  height: 40px;
+  height: 90px;
   display: flex;
 }
 
@@ -127,16 +122,51 @@ a:hover{
   color: #787878;
 }
 
+.sample-image {
+  width: 90px;
+  height: 60px;
+  object-fit: cover;
+}
+
 .news-content-message {
-  margin-left: 25px;
+  margin-left: 60px;
 }
 
 .news-show {
   text-align: right;
-  margin-right:80px;
+  margin: 10px 200px 0 0;
 }
 
 
+
+/******************************************************** 
+  スケジュール 
+********************************************************/
+.schedule {
+  display: flex;
+  justify-content: center;
+}
+
+.schedule-top {
+  display: flex;
+  justify-content: space-between;
+  width: 1200px;
+  height: 750px;
+}
+
+.schedule-title {
+  font-size: 25px;
+  margin: 100px 0 0 100px;
+}
+
+.schedule-introduce {
+  margin : 30px 0 0 100px;
+}
+
+.schedule-right {
+  width: 800px;
+  margin : 100px 60px 0 0px;
+}
 
 /******************************************************** 
   フッター

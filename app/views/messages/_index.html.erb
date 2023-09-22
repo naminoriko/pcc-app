@@ -8,18 +8,23 @@
     <div class="news-contents">
       <% @messages.order(created_at: :desc).limit(3).each do |message| %>
         <div class="news-content">
-          <div class="news-content-date">
-            <%= message.created_at.strftime('%Y/%m/%d') %>
-          </div>
+
+            <div class="news-content-date">
+              <%= message.created_at.strftime('%Y/%m/%d') %>
+              <br><%= image_tag '1605802.jpg', alt: 'クラブ画像', class: 'sample-image' %>
+            </div>
+           
           <div class="news-content-message">
-            <%= message.message.length > 30 ? "#{message.message[0..29]}..." : message.message %>
+            <%= message.message.length > 45 ? "#{message.message[0..44]}..." : message.message %>
           </div>
+        
         </div>
       <% end %>
+      
       <div class="news-show">
         <%= link_to "READ MORE..", messages_path %>
       </div>
-     </div>
+    </div>
 
   </div>
 </div>

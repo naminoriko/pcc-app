@@ -10,7 +10,7 @@
 }
 
 .message-image {
-  width: 1000px;
+  width: 1200px;
   height: 300px;
   object-fit: cover;
 }
@@ -25,7 +25,7 @@
 
 .news-index-box{
   background-color: bisque;
-  width: 1000px;
+  width: 1200px;
 }
 
 .news-index-title {
