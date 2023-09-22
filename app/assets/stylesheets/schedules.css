@@ -36,7 +36,7 @@
 }
 
 .bottom-header {
-  background-color: #a6e4e7;
+  background-color: #FFFADD;
   display: flex;
   justify-content: center;
 }
@@ -96,13 +96,13 @@ a:hover{
 
 .news-box{
   width: 1200px;
-  height: 550px;
+  height: 1000px;
 }
 
 .news-title {
   font-size: 25px;
   font-weight: bold;
-  margin: 100px 0 0 100px;
+  margin: 200px 0 50px 100px;
 }
 
 
@@ -220,7 +220,7 @@ a:hover{
   font-size: 25px;
   font-weight:bold;
   display: flex;
-  margin-top: 10px;
+  margin: 10px 0 5px 0;
 }
 
 .admin-buttuns {
@@ -233,7 +233,7 @@ a:hover{
   border-radius: 5px;
   margin: 10px;
   padding: 10px;
-  background-color: antiquewhite;
+  background-color: #FFCC70;
 }
 
 .activity-show-contents {
@@ -245,7 +245,7 @@ a:hover{
   margin: 10px 0;
   border: solid grey 1px;
   border-radius: 3px;
-  width: 450px;
+  width: 490px;
   padding: 20px;
 
 }
@@ -268,7 +268,7 @@ a:hover{
 }
 
 .font-left {
-  margin: 10px 20px 10px 0;
+  margin: 10px 50px 10px 30px;
   font-size: 16px;
   width: 100px;
 }
@@ -280,14 +280,14 @@ a:hover{
 }
 
 .font-right-finish{
-  margin: 10px 0 10px 36px;
+  margin: 10px 0 10px 32px;
   font-size: 16px;
 
 }
 
 .show-applicant-main {
   margin: 50px 0;
-  background-color: beige;
+  background-color: #FFFADD;
  
 }
 
@@ -312,7 +312,7 @@ a:hover{
   フッター
 ********************************************************/
 .footer {
-  background-color: #a6e4e7;
+  background-color: #FFCC70;
   width: 100vw;
   height: 40px;
   display:flex;
