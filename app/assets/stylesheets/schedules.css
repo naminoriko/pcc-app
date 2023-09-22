@@ -47,7 +47,7 @@
   justify-content: space-around;
   align-items: center;
   list-style: none;
-  width: 900px;
+  width: 1000px;
 }
 
 .club-info-list {
@@ -71,7 +71,7 @@ a:hover{
 .main {
   background-color: #FFFFFF ;
   width: 100vw;
-  height: 1000px;
+
 }
 
 .top-image {
@@ -81,7 +81,8 @@ a:hover{
 }
 
 .club-image {
-  width: 900px;
+  width: 1000px;
+  height: 300px;
   object-fit: cover;
 }
 
@@ -98,21 +99,21 @@ a:hover{
 .news-box{
   display: flex;
   background-color: bisque;
-  width: 900px;
+  width: 1000px;
   height: 200px;
 }
 
 .news-title {
   font-size: 25px;
   height: 200px;
-  width: 200px;
+  width: 150px;
   text-align: center;
   margin-top: 30px;
 }
 
 .news-contents {
   height: 200px;
-  width: 700px;
+  width: 850px;
   margin-top: 35px;
 }
 
@@ -127,7 +128,7 @@ a:hover{
 }
 
 .news-content-message {
-  margin-left: 15px;
+  margin-left: 25px;
 }
 
 .news-show {

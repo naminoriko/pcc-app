@@ -6,7 +6,6 @@
     </div>
 
     <div class="news-contents">
-  
       <% @messages.order(created_at: :desc).limit(3).each do |message| %>
         <div class="news-content">
           <div class="news-content-date">
@@ -17,13 +16,10 @@
           </div>
         </div>
       <% end %>
-    
-
       <div class="news-show">
         <%= link_to "READ MORE..", messages_path %>
       </div>
-    
-    </div>
+     </div>
 
   </div>
 </div>

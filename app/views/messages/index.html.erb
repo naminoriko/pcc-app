@@ -1,40 +1,41 @@
-<div class="news">
-  <div class="news-box">
+<div class="main">
+  <div class='message-top-image'>
+    <%= image_tag '1231327.jpg', alt: 'クラブ画像', class: 'club-image' %>
+  </div>
 
-    <div class="news-new">
-      投稿する
-    <%= form_with(model: @message,  local: true) do |form| %>
-      <%= form.text_field :message, placeholder: "お知らせ内容", name: "message[message]" %>
-      <%= form.submit "SEND" %>
-    <% end %>
-    </div>
-
-
-
-    <div class="news-title">
-      お知らせ
-    </div>
-
-    <div class="news-contents">
-  
-      <% @messages.order(created_at: :desc).each do |message| %>
-        <div class="news-content">
-          <div class="news-content-date">
-            <%= message.created_at.strftime('%Y/%m/%d') %>
-          </div>
-          <div class="news-content-message">
-            <%= message.message %>
-          </div>
+  <div class="news-index">
+    <div class="news-message">
+      <div class="news-index-box">
+        <div class="news-index-title">
+          お知らせ
         </div>
-      <% end %>
-    
 
-      <div class="news-show">
-        <%= link_to "READ MORE..", messages_path %>
+        <div class="news-index-contents">
+          <% @messages.order(created_at: :desc).each do |message| %>
+            <div class="news-index-content">
+              <div class="news-content-date">
+                <%= message.created_at.strftime('%Y/%m/%d') %>
+              </div>
+              <div class="news-content-message">
+                <%= message.message %>
+              </div>
+            </div>
+          <% end %>
+        </div>
       </div>
-    
-    </div>
 
+      <div class="news-new">
+        <div class="news-new-title">
+          投稿する
+        </div>
+        <div class="news-form">
+          <%= form_with(model: @message,  local: true) do |form| %>
+            <%= form.text_field :message, placeholder: "お知らせ内容", name: "message[message]" %>
+            <%= form.submit "SEND" %>
+          <% end %>
+        </div>  
+      </div>
+      
+    </div>
   </div>
 </div>
-
