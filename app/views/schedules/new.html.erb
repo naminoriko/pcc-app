@@ -1,46 +1,65 @@
-  <%= form_with(model: @schedule, local: true) do |form| %>
+<div class="schedule-admin">
+  <div class="admin-content">
+    <div class="schedule-new">
+      <div class="schedule-form">  
+        <div class="schedule-form-title">
+          管理者用 登録フォーム
+        </div>
+        <%= form_with(model: @schedule, local: true) do |form| %>
 
-    <div class="time">
-    <%= form.label :開始時間 %>
-    <%= form.datetime_select :start_time %>
-  </div>
+          <div class="time">
+            <%= form.label :開始時間 %>
+            &nbsp;&nbsp;&nbsp;
+            <%= form.datetime_select :start_time %>
+          </div>
 
-  <div class="time">
-    <%= form.label :終了時間 %>
-    <%= form.time_select :finish_time %>
-  </div>
+          <div class="time">
+            <%= form.label :終了時間 %> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <%= form.time_select :finish_time %>
+          </div>
 
-   <div class="place">
-    <%= form.label :場所 %>
-    <%= form.text_field :place %>
-  </div>
+          <div class="place">
+            <%= form.label :場所 %>
+            <%= form.text_field :place %>
+          </div>
 
-  <div class="activity">
-    <%= form.label :アクティビティ %>
-    <%= form.text_field :activity %>
-  </div>
+          <div class="activity">
+            <%= form.label :アクティビティ %>
+            <%= form.text_field :activity %>
+          </div>
 
-  <div class="participant">
-    <%= form.label :募集人数 %>
-    <%= form.text_field :participant %>
-  </div>
+          <div class="participant">
+            <%= form.label :募集人数 %>
+            <%= form.text_field :participant %>
+          </div>
 
 
-  <div class="submit">
-    <%= form.submit %>
-  </div>
+          <div class="submit">
+            <%= form.submit %>
+          </div>
 
-  <% end %>
- <%= link_to "予定を入れる", new_schedule_path %>
-  <%= month_calendar events: @schedules do |date, schedules| %>
-      <%= date.day %>
-      <% schedules.each do |schedule| %>
-        <%= link_to schedule.place, schedule_path(schedule.id) %>
-        <br><%= schedule.start_time.strftime("%H:%M")%>
-        ~
-        <%= schedule.finish_time.strftime("%H:%M")%>   
-        <% if schedule.applicants.count >= 1 %>
-          <%= "🈸" %>
+        <% end %>
+      </div>
+    </div>
+    
+
+    <div class="schedule-confirm">
+      <%= month_calendar events: @schedules do |date, schedules| %>
+        <%= date.day %>
+        <% schedules.each do |schedule| %>
+          <%= link_to schedule.place, schedule_path(schedule.id) %>
+          <br><%= schedule.start_time.strftime("%H:%M")%>
+          ~
+          <%= schedule.finish_time.strftime("%H:%M")%>   
+            <% if schedule.applicants.count >= 1 %>
+              <%= "🈸" %>
+            <% end %>
         <% end %>
       <% end %>
-  <% end %>
+    </div>
+ 
+  </div>
+</div>
