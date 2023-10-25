@@ -9,12 +9,13 @@ class SchedulesController < ApplicationController
   
   def new
     @schedule = Schedule.new
+    @schedules = Schedule.all
   end
 
   def create
     @schedule = Schedule.new(schedule_params)
     if @schedule.save
-       redirect_to schedules_path
+       redirect_to new_schedule_path
     else
       render :new
     end
@@ -33,7 +34,7 @@ class SchedulesController < ApplicationController
   def update
     @schedule = Schedule.find(params[:id])
     if @schedule.update(schedule_params)
-      redirect_to schedules_path, notice: "編集しました"
+      redirect_to new_schedule_path, notice: "編集しました"
     else
       render :edit
     end
@@ -43,7 +44,7 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.find(params[:id])
     @schedule.applicants.destroy_all
     @schedule.destroy
-    redirect_to schedules_path, notice:"削除しました"
+    redirect_to new_schedule_path, notice:"削除しました"
   end
 
   

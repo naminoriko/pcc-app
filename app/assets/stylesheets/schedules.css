@@ -1,17 +1,325 @@
+/******************************************************** 
+  ヘッダー
+********************************************************/
 .header {
-  background-color: #F5F5F5 ;
   width: 100vw;
-  height: 100px;
+  height: 120hh;
 }
 
+.top-header {
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.club-name {
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.user-info {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.user-info-lists {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.user-info-list {
+  margin: 0px 10px;
+}
+
+.bottom-header {
+  background-color: #FFFADD;
+  display: flex;
+  justify-content: center;
+}
+
+.club-info-lists {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  width: 1200px;
+}
+
+.club-info-list {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+a {
+	color: #000000;
+  text-decoration: none;
+}
+
+a:hover{
+  color: orange;
+}
+
+
+/******************************************************** 
+  トップページ 
+********************************************************/
 .main {
   background-color: #FFFFFF ;
   width: 100vw;
-  height: 500px;
+
 }
 
+.top-image {
+  display: flex;
+  justify-content: center;
+}
+
+.club-image {
+  width: 1200px;
+  height: 500px;
+  object-fit: cover;
+}
+
+
+
+/******************************************************** 
+  お知らせ
+********************************************************/
+.news {
+  display: flex;
+  justify-content: center;
+}
+
+.news-box{
+  width: 1200px;
+  height: 1000px;
+}
+
+.news-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 200px 0 50px 100px;
+}
+
+
+.news-contents {
+  margin: 30px 0 0 100px;
+}
+
+.news-content {
+  font-size: 16px;
+  height: 90px;
+  display: flex;
+}
+
+.news-content-date {
+  color: #787878;
+}
+
+.sample-image {
+  width: 90px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.news-content-message {
+  margin-left: 60px;
+}
+
+.news-show {
+  text-align: right;
+  margin: 10px 200px 0 0;
+}
+
+
+
+/******************************************************** 
+  スケジュール(一覧画面)
+********************************************************/
+.schedule {
+  display: flex;
+  justify-content: center;
+}
+
+.schedule-top {
+  display: flex;
+  justify-content: space-between;
+  width: 1200px;
+  height: 750px;
+}
+
+.schedule-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 100px 0 0 100px;
+}
+
+.schedule-introduce {
+  margin : 30px 0 0 100px;
+}
+
+.schedule-right {
+  width: 800px;
+  margin : 100px 60px 0 0px;
+}
+
+/******************************************************** 
+  スケジュール(登録画面)
+********************************************************/
+.schedule-admin {
+  display: flex;
+  justify-content: center;
+}
+
+.schedule-new {
+  display: flex;
+  justify-content: center;
+  margin: 60px 0;
+}
+
+.schedule-form {
+  width: 500px;
+}
+
+.schedule-form-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.schedule-confirm {
+  width: 1200px;
+  margin: 60px 0;
+}
+
+
+/******************************************************** 
+  スケジュール(詳細、申し込み画面)
+********************************************************/
+
+.schedule-show {
+  display: flex;
+  justify-content: center;
+}
+
+.schedule-show-main {
+  width: 500px;
+  margin: 50px 0;
+}
+
+.activity-show-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.activity-show-title {
+  font-size: 25px;
+  font-weight:bold;
+  display: flex;
+  margin: 10px 0 5px 0;
+}
+
+.admin-buttuns {
+  display: flex;
+}
+
+.admin-buttun {
+  font-size: 16px;
+  border: solid 1px;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #FFCC70;
+}
+
+.activity-show-contents {
+  display: flex;
+  justify-content: center; 
+}
+
+.activity-show-content {
+  margin: 10px 0;
+  border: solid grey 1px;
+  border-radius: 3px;
+  width: 490px;
+  padding: 20px;
+
+}
+
+.time2 {
+  display:flex;
+}
+
+
+.place2 {
+  display:flex;
+}
+
+.activity2 {
+  display:flex;
+}
+
+.participant2 {
+  display:flex;
+}
+
+.font-left {
+  margin: 10px 50px 10px 30px;
+  font-size: 16px;
+  width: 100px;
+}
+
+.font-right {
+  margin: 10px 0;
+  font-size: 16px;
+  width: 350px;
+}
+
+.font-right-finish{
+  margin: 10px 0 10px 32px;
+  font-size: 16px;
+
+}
+
+.show-applicant-main {
+  margin: 50px 0;
+  background-color: #FFFADD;
+ 
+}
+
+.applicant-form-title {
+  font-size: 25px;
+  font-weight:bold;
+}
+
+.comments-main-title {
+  font-size:25px;
+  font-weight:bold;
+}
+
+.comments-main-index {
+  border-bottom: solid grey 1px;
+  margin: 20px 0;
+}
+
+
+
+/******************************************************** 
+  フッター
+********************************************************/
 .footer {
-  background-color: #F5F5F5 ;
+  background-color: #FFCC70;
   width: 100vw;
-  height: 200px;
+  height: 40px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.privacy_policy {
+  font-size: 8px;
 }

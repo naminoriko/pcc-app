@@ -1,11 +1,30 @@
- <div class="contents row">
-お知らせ
-    <% @messages.each do |message| %>
-      <div class="content_post">
-        <p><%= message.message %>
-          <%= link_to "削除", message_path(message.id), method: :delete %>
-          <%= link_to "編集", edit_message_path(message.id) %>  
-        </p>
+<div class="news">
+  <div class="news-box">
+
+    <div class="news-title">
+      お知らせ
+    </div>
+
+    <div class="news-contents">
+      <% @messages.order(created_at: :desc).limit(3).each do |message| %>
+        <div class="news-content">
+
+            <div class="news-content-date">
+              <%= message.created_at.strftime('%Y/%m/%d') %>
+              <br><%= image_tag '1629741_s.jpg', alt: 'クラブ画像', class: 'sample-image' %>
+            </div>
+           
+          <div class="news-content-message">
+            <%= message.message.length > 45 ? "#{message.message[0..44]}..." : message.message %>
+          </div>
+        
+        </div>
+      <% end %>
+      
+      <div class="news-show">
+        <%= link_to "READ MORE..", messages_path %>
       </div>
-    <% end %>
+    </div>
+
   </div>
+</div>

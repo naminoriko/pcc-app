@@ -1,43 +1,61 @@
-<div class="wrapper">
-  <div class="header">
-    <%= render "shared/header" %>
-  </div>
+<div class="schedule-admin">
+  <div class="admin-content">
 
-<%= form_with(model: @schedule, local: true) do |form| %>
+    <div class="schedule-confirm">
+      <%= month_calendar events: @schedules do |date, schedules| %>
+        <%= date.day %>
+        <% schedules.each do |schedule| %>
+          <%= link_to schedule.place, schedule_path(schedule.id) %>
+          <br><%= schedule.start_time.strftime("%H:%M")%>
+          ~
+          <%= schedule.finish_time.strftime("%H:%M")%>   
+            <% if schedule.applicants.count >= 1 %>
+              <%= "🈸" %>
+            <% end %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="schedule-new">
+      <div class="schedule-form">  
+        <div class="schedule-form-title">
+          管理者用 登録フォーム
+        </div>
+        <%= form_with(model: @schedule, local: true) do |form| %>
 
-    <div class="time">
-    <%= form.label :開始時間 %>
-    <%= form.datetime_select :start_time %>
-  </div>
+          <div class="time">
+            <%= form.label :開始時間 %>
+            <%= form.datetime_select :start_time %>
+          </div>
 
-  <div class="time">
-    <%= form.label :終了時間 %>
-    <%= form.datetime_select :finish_time %>
-  </div>
+          <div class="time">
+            <%= form.label :終了時間 %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <%= form.time_select :finish_time %>
+          </div>
 
-   <div class="place">
-    <%= form.label :場所 %>
-    <%= form.text_field :place %>
-  </div>
+          <div class="place">
+            <%= form.label :練習場所 %>
+            <%= form.text_field :place %>
+          </div>
 
-  <div class="activity">
-    <%= form.label :アクティビティ %>
-    <%= form.text_field :activity %>
-  </div>
+          <div class="activity">
+            <%= form.label :練習内容 %>
+            <%= form.text_field :activity %>
+          </div>
 
-  <div class="participant">
-    <%= form.label :募集人数 %>
-    <%= form.text_field :participant %>
-  </div>
+          <div class="participant">
+            <%= form.label :募集人数 %>
+            <%= form.text_field :participant %>
+          </div>
 
 
-  <div class="submit">
-    <%= form.submit %>
-  </div>
+          <div class="submit">
+            <%= form.submit %>
+          </div>
 
-  <% end %>
+        <% end %>
+      </div>
+    </div>
 
-  <div class="footer">
-    <%= render "shared/footer" %>
+ 
   </div>
 </div>

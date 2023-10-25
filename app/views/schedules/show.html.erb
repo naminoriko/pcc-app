@@ -1,69 +1,85 @@
-<div class="wrapper">
-  <div class="header">
-    <%= render "shared/second-header" %>
-  </div>
+<div class="schedule-show">
+  <div class="schedule-show-main">
+    <div class="activity-show">
+      <div class="activity-show-top">
+        <div class="activity-show-title">
+          練習詳細
+        </div>
+        <div class="admin-buttuns">
+          <% if current_user.id == @schedule.user_id%>
+            <div class="admin-buttun">
+              <%= link_to '編集', edit_schedule_path %>
+            </div>
+            <div class="admin-buttun">
+              <%= link_to '削除', schedule_path, method: :delete %>          
+            </div>
+          <% end %>
+        </div>
+      </div>
 
-  <h1>練習詳細</h1>
-  <br>
-  <% if current_user.id == @schedule.user_id%>
-    <%= link_to '編集する', edit_schedule_path %>
-    <%= link_to '削除する', schedule_path, method: :delete %>
-  <% end %>
+      <div class="activity-show-contents">     
+          <div class="activity-show-content">
 
-  <div class="time">
-  開始時間
-    <%= @schedule.start_time %>
-  </div>
-  <div class="time">
-  終了時間
-    <%= @schedule.finish_time.strftime("%H:%M") %>
-  </div>
-  <div class="place">
-  場所
-    <%= @schedule.place %>
-  </div>
-  <div class="activity">
-  アクティビティ
-    <%= @schedule.activity %>
-  </div>
-  <div class="participant">
-  募集人数
-    <%= @schedule.participant %>
-  </div>
+            <div class="time2">
+              <div class="font-left">開始時間</div>
+              <div class="font-right"><%= @schedule.start_time.strftime("%Y-%m-%d - %H:%M") %></div>
+            </div>
+            <div class="time2">
+              <div class="font-left">終了時間</div>            
+              <div class="font-right-finish">〃　　　<%= @schedule.finish_time.strftime("%H:%M") %></div>
+            </div>
+            <div class="place2">
+              <div class="font-left">練習場所</div>
+              <div class="font-right"><%= @schedule.place %></div>
+            </div>
+            <div class="activity2">
+              <div class="font-left">練習内容</div>
+              <div class="font-right"><%= @schedule.activity %></div>
+            </div>
+            <div class="participant2">
+              <div class="font-left">募集人数</div>
+              <div class="font-right"><%= @schedule.participant %>人</div>
+            </div>
 
-  <% if @schedule.participant > @applicants.count %>
-      <h2>参加申し込みフォーム</h2>
-    <div class="container">
-      <% if user_signed_in? %>
-        <%= form_with(model: [@schedule, @applicant], local: true) do |form| %>
-          <%= form.text_area :content, placeholder: "コメントする", rows: "2" %>
-          <%= form.submit "参加申し込みする" %>
-        <% end %>
-      <% else %>
-        <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
-      <% end %>
+          </div>
+      </div>
+
     </div>
-  <% else %>
-     <h2>募集人数は定員になりました。</h2> 
-  <% end %>
     
-    <div class="comments">
-      <h4>＜参加者一覧＞</h4>
-      <% @applicants.each do |applicant| %>
-        <p>
-          <%= applicant.id %>
-          <strong><%= link_to applicant.user.nickname, "/users/#{applicant.user_id}" %>：</strong>
-          <%= applicant.content %>
-        </p>
+    <div class="show-applicant-main">
+      <% if @schedule.participant > @applicants.count %>
+          <div class="applicant-form-title">
+            参加申込フォーム
+          </div>
+          <div class="container">
+            <% if user_signed_in? %>
+              <%= form_with(model: [@schedule, @applicant], local: true) do |form| %>
+                <%= form.text_area :content, placeholder: "コメントする", rows: "2" %>
+                <%= form.submit "参加申し込みする" %>
+              <% end %>
+            <% else %>
+              <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+            <% end %>
+          </div>
+      <% else %>
+        <h2>募集人数は定員になりました。</h2> 
       <% end %>
-    </div>  
+     </div>
+        
+        <div class="comments-main">
+          <div class="comments-main-title">
+            参加者一覧
+          </div>
+            <% @applicants.each do |applicant| %>
+            <div class="comments-main-index">
+                <%= link_to applicant.user.nickname, "/users/#{applicant.user_id}" %>さん　：　
+                <%= applicant.content %>
+            </div>
+            <% end %>
 
+        </div>  
+    
+    
 
-
-
-
-    <div class="footer">
-      <%= render "shared/footer" %>
-    </div>
+  </div>
 </div>
-
